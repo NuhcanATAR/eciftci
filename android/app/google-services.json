@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419955027173",
+    "project_id": "eciftcidb",
+    "storage_bucket": "eciftcidb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419955027173:android:5e7f33b9c369930684780c",
+        "android_client_info": {
+          "package_name": "com.codenuhcan.eciftci"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjq4FmFVW9AyV1HDJ0UwysPKpDHyMQ1Tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
