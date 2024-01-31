@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 enum AppIconConstant {
   appLogoGreen('logogreen'),
-  appLogoTextGreen('logotexgreen');
+  appLogoTextGreen('logotexgreen'),
+  appLogoWhite('logotextwhite'),
+  appLogoTextWhite('logowhite');
 
   final String value;
   const AppIconConstant(this.value);
