@@ -1,4 +1,5 @@
 import 'package:eciftci/product/constants/color_constant.dart';
+import 'package:eciftci/product/constants/image_constant.dart';
 import 'package:eciftci/product/constants/string_constant.dart';
 import 'package:eciftci/product/widget/text_widget/body_medium_text.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
@@ -18,27 +19,47 @@ class FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      fit: FlexFit.tight,
-      flex: 2,
-      child: Padding(
-        padding: context.padding.low,
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                // title & sub title
-                buildTitleSubTitleWidget,
-                // login button
-                buildLoginButtonWidget(context),
-                // register
-                buildRegisterWidget(context),
-              ],
-            ),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AppLogRegImgsConstant.backImg.toImg,
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.black.withOpacity(0.2),
+            BlendMode.darken,
           ),
         ),
+      ),
+      child: Column(
+        children: <Widget>[
+          const Expanded(
+            flex: 3,
+            child: SizedBox(),
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 2,
+            child: Padding(
+              padding: context.padding.low,
+              child: Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      // title & sub title
+                      buildTitleSubTitleWidget,
+                      // login button
+                      buildLoginButtonWidget(context),
+                      // register
+                      buildRegisterWidget(context),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -50,14 +71,14 @@ class FooterWidget extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(top: 5, bottom: 10),
-              child: BodyMediumBlackBoldText(
+              child: BodyMediumWhiteBoldText(
                 text: AppLogRegStringConstant.titleText,
                 textAlign: TextAlign.center,
               ),
             ),
             Padding(
               padding: EdgeInsets.only(top: 5),
-              child: LabelMediumBlackText(
+              child: LabelMediumWhiteText(
                 text: AppLogRegStringConstant.subTitleText,
                 textAlign: TextAlign.center,
               ),
@@ -102,7 +123,7 @@ class FooterWidget extends StatelessWidget {
               flex: 1,
               child: Container(
                 alignment: Alignment.centerRight,
-                child: const LabelMediumBlackText(
+                child: const LabelMediumWhiteText(
                   text: AppLogRegStringConstant.registerText,
                   textAlign: TextAlign.right,
                 ),
@@ -119,7 +140,7 @@ class FooterWidget extends StatelessWidget {
                     onTap: () {
                       routerService.registerViewNavigatorRouter(context);
                     },
-                    child: const LabelMediumMainColorText(
+                    child: const LabelMediumWhiteText(
                       text: AppLogRegStringConstant.registerBtnText,
                       textAlign: TextAlign.left,
                     )),

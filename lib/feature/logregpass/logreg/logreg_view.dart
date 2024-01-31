@@ -1,5 +1,4 @@
-import 'package:eciftci/feature/logregpass/logreg/widget/backimg_widget.dart';
-import 'package:eciftci/feature/logregpass/logreg/widget/footer_widget.dart';
+import 'package:eciftci/feature/logregpass/logreg/widget/body_widget.dart';
 import 'package:eciftci/product/utility/base/logregpass_base/logreg_base/logreg_base.dart';
 import 'package:flutter/material.dart';
 
@@ -15,22 +14,12 @@ class _LogRegViewState extends MainLoginRegisterBase<LogRegView> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      body: Column(
-        children: <Widget>[
-          // back img
-          buildBackImgWidget,
-          // footer
-          buildFooterWidget,
-        ],
-      ),
+      body: buildBodyWidget,
     );
   }
 
-  // back img
-  Widget get buildBackImgWidget => const BackImgWidget();
-
-  // footer
-  Widget get buildFooterWidget => FooterWidget(
+  // body
+  Widget get buildBodyWidget => FooterWidget(
         routerService: routerService,
         maxWidth: maxWidth,
         dynamicHeight: dynamicHeight,
