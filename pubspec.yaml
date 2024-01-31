@@ -20,8 +20,6 @@ dependencies:
   firebase_core: ^2.15.1
   cloud_firestore: ^4.9.1
   firebase_auth: ^4.9.0
-  firebase_ui_auth: ^1.8.0
-  firebase_ui_oauth_google: ^1.2.11
   firebase_storage: ^11.2.6
 
   # core
@@ -34,7 +32,7 @@ dependencies:
   data_connection_checker_nulls: ^0.0.2
   cached_network_image: ^3.3.1
   intro_slider: ^3.0.10
-  flutter_rating_bar: ^4.0.1
+
 
   # utility
   loading_animation_widget: ^1.2.0+4
@@ -43,7 +41,6 @@ dependencies:
   google_fonts: ^5.1.0
   carousel_slider: ^4.2.1
   logger: ^2.0.2
-  table_calendar: ^3.0.9
   url_launcher: ^6.1.6
   animate_do: ^3.1.2
   flutter_datetime_picker_plus: ^2.1.0
@@ -65,7 +62,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+  # icons
     - assets/icons/app_icon/
+  # images
+    - assets/images/splashslider_img/
+    - assets/images/logreg_img/
   #   - images/a_dot_ham.jpeg
 
 
