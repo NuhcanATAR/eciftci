@@ -44,7 +44,7 @@ class RegisterServiceModel {
   // validator
   String? nameValidator(String? nameVal) {
     if (nameVal == null || nameVal.isEmpty) {
-      return "Zorunlu Alan";
+      return "Ad alanı boş bırakılamaz";
     } else {
       return null;
     }
@@ -52,15 +52,20 @@ class RegisterServiceModel {
 
   String? surnameValidator(String? surnameVal) {
     if (surnameVal == null || surnameVal.isEmpty) {
-      return "Zorunlu Alan";
+      return "Soyad alanı boş bırakılamaz";
     } else {
       return null;
     }
   }
 
   String? emailValidator(String? emailVal) {
+    final emailRegExp =
+        RegExp(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+
     if (emailVal == null || emailVal.isEmpty) {
-      return "Zorunlu Alan";
+      return "E-posta alanı boş bırakılamaz";
+    } else if (!emailRegExp.hasMatch(emailVal)) {
+      return "Geçersiz e-posta formatı";
     } else {
       return null;
     }
@@ -68,15 +73,17 @@ class RegisterServiceModel {
 
   String? phoneNumberValidator(String? phoneNumberVal) {
     if (phoneNumberVal == null || phoneNumberVal.isEmpty) {
-      return "Zorunlu Alan";
-    } else {
-      return null;
+      return "Telefon numarası alanı boş bırakılamaz";
     }
+    if (!RegExp(r"^[1-9][0-9]{9}$").hasMatch(phoneNumberVal)) {
+      return "Geçersiz telefon numarası formatı";
+    }
+    return null;
   }
 
   String? passwordValidator(String? passwordVal) {
     if (passwordVal == null || passwordVal.isEmpty) {
-      return "Zorunlu Alan *";
+      return "Şifre alanı boş bırakılamaz";
     } else {
       return null;
     }

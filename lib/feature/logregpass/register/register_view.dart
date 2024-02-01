@@ -109,7 +109,8 @@ class _RegisterViewState extends MainRegisterBase<RegisterView> {
               ),
               child: DropdownButtonHideUnderline(
                 child: DropdownButtonFormField<mainUserCity>(
-                  validator: (value) => value == null ? "Zorunlu Alan *" : null,
+                  validator: (value) =>
+                      value == null ? "Şehir alanı boş bırakılamaz" : null,
                   isExpanded: true,
                   decoration: const InputDecoration(
                     border: InputBorder.none,
@@ -164,7 +165,7 @@ class _RegisterViewState extends MainRegisterBase<RegisterView> {
                     child: DropdownButtonHideUnderline(
                       child: DropdownButtonFormField<mainUserDistrict>(
                         validator: (value) =>
-                            value == null ? "Zorunlu Alan *" : null,
+                            value == null ? "İlçe alanı boş bırakılamaz" : null,
                         isExpanded: true,
                         decoration: const InputDecoration(
                           border: InputBorder.none,
