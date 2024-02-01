@@ -22,3 +22,13 @@ enum AppRegisterIcon {
   String get toPng => "assets/icons/register_icon/$value.png";
   Image get toImg => Image.asset(toPng);
 }
+
+enum AppForgotPassIcon {
+  appSendMailSuccessIcon('icons8-send-mail-53');
+
+  final String value;
+  const AppForgotPassIcon(this.value);
+
+  String get toPng => "assets/icons/password_icon/$value.png";
+  Image get toImg => Image.asset(toPng);
+}

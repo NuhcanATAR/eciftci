@@ -1,4 +1,5 @@
 import 'package:eciftci/feature/splash/splash_view/splash.dart';
+import 'package:eciftci/product/bloc/logregpass_bloc/password_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/register_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/initialize/app_start.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,9 @@ void main() async {
       providers: [
         BlocProvider<AuthSignUpCubit>(
           create: (BuildContext context) => AuthSignUpCubit(),
+        ),
+        BlocProvider<MainAuthPasswordCubit>(
+          create: (BuildContext context) => MainAuthPasswordCubit(),
         ),
       ],
       child: const MainApp(),

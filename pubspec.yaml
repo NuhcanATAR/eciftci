@@ -65,6 +65,7 @@ flutter:
   # icons
     - assets/icons/app_icon/
     - assets/icons/register_icon/
+    - assets/icons/password_icon/
   # images
     - assets/images/splashslider_img/
     - assets/images/logreg_img/
