@@ -1,19 +1,19 @@
 import 'package:eciftci/product/enums/logregpass_enum/login_enum/login_enum.dart';
-import 'package:eciftci/product/utility/base/logregpass_base/login_base/login_base.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 
 class LoginPasswordInputWidget extends StatefulWidget {
-  const LoginPasswordInputWidget({super.key});
+  const LoginPasswordInputWidget({required this.serviceModel, super.key});
+
+  final dynamic serviceModel;
 
   @override
   State<LoginPasswordInputWidget> createState() =>
       _LoginPasswordInputWidgetState();
 }
 
-class _LoginPasswordInputWidgetState
-    extends MainLoginBase<LoginPasswordInputWidget> {
+class _LoginPasswordInputWidgetState extends State<LoginPasswordInputWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,9 +26,9 @@ class _LoginPasswordInputWidgetState
         ),
       ),
       child: TextFormField(
-        obscureText: serviceModel.isPasswordHideStatus,
-        controller: serviceModel.passwordController,
-        validator: serviceModel.passwordValidator,
+        obscureText: widget.serviceModel.isPasswordHideStatus,
+        controller: widget.serviceModel.passwordController,
+        validator: widget.serviceModel.passwordValidator,
         style: GoogleFonts.nunito(
           textStyle: context.general.textTheme.labelMedium?.copyWith(
             color: Colors.black,
@@ -50,12 +50,12 @@ class _LoginPasswordInputWidgetState
           suffixIcon: IconButton(
             onPressed: () {
               setState(() {
-                serviceModel.isPasswordHideStatus =
-                    !serviceModel.isPasswordHideStatus;
+                widget.serviceModel.isPasswordHideStatus =
+                    !widget.serviceModel.isPasswordHideStatus;
               });
             },
             icon: Icon(
-              serviceModel.isPasswordHideStatus
+              widget.serviceModel.isPasswordHideStatus
                   ? Icons.visibility
                   : Icons.visibility_off,
               color: Colors.grey,

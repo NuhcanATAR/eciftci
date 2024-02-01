@@ -5,10 +5,13 @@ import 'package:eciftci/feature/logregpass/login/widget/password_widget.dart';
 import 'package:eciftci/feature/logregpass/login/widget/registerbtn_widget.dart';
 import 'package:eciftci/feature/logregpass/login/widget/remembermeforgotpass_widget.dart';
 import 'package:eciftci/feature/logregpass/login/widget/titlesubtitle_widget.dart';
+import 'package:eciftci/product/bloc/logregpass_bloc/login_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/logregpass_bloc/login_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/utility/base/logregpass_base/login_base/login_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 
 class LoginView extends StatefulWidget {
@@ -42,29 +45,34 @@ class _LoginViewState extends MainLoginBase<LoginView> {
           textAlign: TextAlign.left,
         ),
       ),
-      body: Form(
-        key: serviceModel.formLoginKey,
-        child: Padding(
-          padding: context.padding.low,
-          child: ListView(
-            children: <Widget>[
-              // logo
-              buildLogoWidget,
-              // title & sub title
-              buildTitleSubTitleWidget,
-              // email
-              buildEmailWidget,
-              // password
-              buildPasswordWidget,
-              // remeber me & forgot password
-              buildRememberMeForgotPasswordWidget,
-              // login button
-              buildLoginButtonWidget,
-              // register button
-              buildRegisterButtonWidget,
-            ],
-          ),
-        ),
+      body: BlocConsumer<AuthSignInCubit, AuthSignInState>(
+        listener: authSignInListenerBloc,
+        builder: (context, state) {
+          return Form(
+            key: serviceModel.formLoginKey,
+            child: Padding(
+              padding: context.padding.low,
+              child: ListView(
+                children: <Widget>[
+                  // logo
+                  buildLogoWidget,
+                  // title & sub title
+                  buildTitleSubTitleWidget,
+                  // email
+                  buildEmailWidget,
+                  // password
+                  buildPasswordWidget,
+                  // remeber me & forgot password
+                  buildRememberMeForgotPasswordWidget,
+                  // login button
+                  buildLoginButtonWidget(context),
+                  // register button
+                  buildRegisterButtonWidget,
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -81,14 +89,16 @@ class _LoginViewState extends MainLoginBase<LoginView> {
       );
 
   // password
-  Widget get buildPasswordWidget => const LoginPasswordInputWidget();
+  Widget get buildPasswordWidget => LoginPasswordInputWidget(
+        serviceModel: serviceModel,
+      );
 
   // remeber me & forgot password
   Widget get buildRememberMeForgotPasswordWidget =>
       const RememberMeForgotPasswordWidget();
 
   // login button
-  Widget get buildLoginButtonWidget => LoginButtonWidget(
+  Widget buildLoginButtonWidget(context) => LoginButtonWidget(
         serviceModel: serviceModel,
         maxWidth: maxWidth,
         dynamicHeight: dynamicHeight,

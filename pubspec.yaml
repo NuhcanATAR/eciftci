@@ -22,6 +22,7 @@ dependencies:
   firebase_auth: ^4.9.0
   firebase_storage: ^11.2.6
 
+
   # core
   kartal: ^3.5.0
   equatable: ^2.0.5

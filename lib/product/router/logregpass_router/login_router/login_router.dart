@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 class LoginServiceRouter {
   // login view router
   void loginViewNavigatorRouter(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const LoginRouterView(),
-      ),
-    );
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const LoginRouterView(),
+        ),
+        (Route<dynamic> route) => false);
   }
 
   // register view router

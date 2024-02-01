@@ -1,7 +1,9 @@
+import 'package:eciftci/product/bloc/logregpass_bloc/login_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/enums/logregpass_enum/login_enum/login_enum.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginButtonWidget extends StatelessWidget {
   const LoginButtonWidget(
@@ -17,7 +19,12 @@ class LoginButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (serviceModel.formLoginKey.currentState!.validate()) {}
+        if (serviceModel.formLoginKey.currentState!.validate()) {
+          BlocProvider.of<AuthSignInCubit>(context).signIn(
+            serviceModel.emailController.text.trim(),
+            serviceModel.passwordController.text.trim(),
+          );
+        }
       },
       child: SizedBox(
         width: maxWidth,
