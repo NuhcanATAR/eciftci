@@ -100,7 +100,7 @@ class _RegisterViewState extends MainRegisterBase<RegisterView> {
             width: MediaQuery.of(context).size.width,
             child: Container(
               margin: const EdgeInsets.only(bottom: 10),
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(0.2),
                 borderRadius: const BorderRadius.all(
@@ -121,6 +121,7 @@ class _RegisterViewState extends MainRegisterBase<RegisterView> {
                   icon: const Icon(
                     Icons.location_on,
                     color: Colors.grey,
+                    size: 18,
                   ),
                   elevation: 16,
                   style: GoogleFonts.nunito(
@@ -153,7 +154,7 @@ class _RegisterViewState extends MainRegisterBase<RegisterView> {
                   width: MediaQuery.of(context).size.width,
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 10),
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.only(left: 10, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.grey.withOpacity(0.2),
                       borderRadius: const BorderRadius.all(
@@ -181,6 +182,7 @@ class _RegisterViewState extends MainRegisterBase<RegisterView> {
                         icon: const Icon(
                           Icons.location_city,
                           color: Colors.grey,
+                          size: 18,
                         ),
                         elevation: 16,
                         value: selectDistrict,

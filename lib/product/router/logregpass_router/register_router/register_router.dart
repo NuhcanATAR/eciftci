@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 
 class RegisterRouterService {
   // register router view
-  void registerRouterViewNavigatorRouter(
-      BuildContext context, dynamic routerService) {
+  void registerRouterViewNavigatorRouter(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(

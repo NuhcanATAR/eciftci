@@ -1,8 +1,8 @@
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/enums/logregpass_enum/register_enum/register_enum.dart';
 import 'package:eciftci/product/utility/base/logregpass_base/register_base/register_base.dart';
+import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RegisterAgreementCheckWidget extends StatefulWidget {
   const RegisterAgreementCheckWidget({super.key});
@@ -33,26 +33,21 @@ class _RegisterAgreementCheckWidgetState
                     },
                   ),
                   Expanded(
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        RegisterViewStrings.agreementText.value,
-                        style: GoogleFonts.nunito(
-                          textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
+                    child: LabelMediumBlackText(
+                      text: RegisterViewStrings.agreementText.value,
+                      textAlign: TextAlign.left,
                     ),
                   ),
                 ],
               ),
             ),
-            Text(
-              state.errorText ?? '',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.error,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Text(
+                state.errorText ?? '',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.error,
+                ),
               ),
             ),
           ],

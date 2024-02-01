@@ -86,7 +86,7 @@ class RegisterEndView extends StatelessWidget {
             ),
           ),
           child: LabelMediumWhiteText(
-            text: RegisterViewStrings.registerBtnText.value,
+            text: RegisterViewStrings.loginBtnText.value,
             textAlign: TextAlign.center,
           ),
         ),

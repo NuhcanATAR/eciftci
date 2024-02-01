@@ -1,17 +1,14 @@
-import 'package:eciftci/feature/logregpass/register/view/registerendrouter_view.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/register_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
+import 'package:eciftci/product/router/logregpass_router/register_router/register_router.dart';
 import 'package:flutter/material.dart';
 
 mixin AuthSignUpBlocListenerMixin {
+  // router service
+  RegisterRouterService routerService = RegisterRouterService();
   void authSignUpListenerBloc(context, state) {
     if (state is AuthSignUpSuccess) {
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RegisterEndRouterView(),
-          ),
-          (Route<dynamic> route) => false);
+      routerService.registerRouterViewNavigatorRouter(context);
     } else if (state is AuthSignUpEmailAlReadyInUse) {
       final snackBar = SnackBar(
         backgroundColor: MainAppColorConstant.mainColorBackground,

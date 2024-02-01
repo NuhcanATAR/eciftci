@@ -45,7 +45,7 @@ class AuthSignUpCubit extends Cubit<AuthSignUpState> {
     } catch (e) {
       if (e is FirebaseAuthException) {
         if (e.code == 'email-already-in-use') {
-          emit(AuthSignUpEmailAlReadyInUse('E-posta adresi zaten kullanımda.'));
+          emit(AuthSignUpEmailAlReadyInUse('E-mail adresi zaten kullanımda.'));
         } else {
           emit(AuthSignUpError('Kayıt işlemi başarısız oldu.'));
         }
