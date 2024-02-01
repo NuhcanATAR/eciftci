@@ -1,23 +1,24 @@
 import 'package:eciftci/product/constants/color_constant.dart';
+import 'package:eciftci/product/mixin/logregpass_mixin/register_mixin/register_mixin.dart';
 import 'package:eciftci/product/model/connection_model/connection_model.dart';
-import 'package:eciftci/product/model/logregpass_model/login_model/login_model.dart';
-import 'package:eciftci/product/router/logregpass_router/login_router/login_router.dart';
+import 'package:eciftci/product/model/logregpass_model/register_model/register_model.dart';
+import 'package:eciftci/product/router/logregpass_router/register_router/register_router.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../../product/extension/view_extension.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
-abstract class MainLoginBase<T extends StatefulWidget> extends State<T> {
+abstract class MainRegisterBase<T extends StatefulWidget> extends State<T>
+    with AuthSignUpBlocListenerMixin {
   // model service
-  LoginServiceModel serviceModel = LoginServiceModel();
+  RegisterServiceModel serviceModel = RegisterServiceModel();
 
-  // connection service
+  // connection model
   ConnectionServiceModel serviceConnectionModel = ConnectionServiceModel();
 
   // router service
-  LoginServiceRouter serviceRouter = LoginServiceRouter();
+  RegisterRouterService routerService = RegisterRouterService();
 
   // screens size
   double dynamicWidth(double value) => maxWidth * value;
@@ -32,24 +33,10 @@ abstract class MainLoginBase<T extends StatefulWidget> extends State<T> {
     getConnnectivityStatus();
   }
 
-  // remember me on changed
-  void rememberMeOnChanged(bool? value) {
-    setState(() {
-      serviceModel.isRememberMeStatus = value!;
-    });
-
-    serviceModel.isRememberMeStatus = value!;
-    SharedPreferences.getInstance().then(
-      (prefs) {
-        prefs.setBool("remember_me", value);
-        prefs.setString('email', serviceModel.emailController.text);
-        prefs.setString('password', serviceModel.passwordController.text);
-      },
-    );
-    setState(() {
-      serviceModel.isRememberMeStatus = value;
-    });
-  }
+  // city & district
+  mainUserCity? selectCity;
+  mainUserDistrict? selectDistrict;
+  List<String> selectDistrictList = [];
 
   // connection control
   getConnnectivityStatus() =>

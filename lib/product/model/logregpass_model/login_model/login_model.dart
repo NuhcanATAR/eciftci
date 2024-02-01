@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/widgets.dart';
 import 'package:logger/logger.dart';
 
@@ -33,11 +31,6 @@ class LoginServiceModel {
 
   // password open/close
   late bool isPasswordHideStatus = true;
-
-  // connectivity controller
-  late StreamSubscription subscription;
-  bool isDeviceConnected = false;
-  bool isAlertDialog = false;
 
   // logger
   dynamic logger = Logger();
