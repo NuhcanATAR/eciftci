@@ -25,3 +25,13 @@ enum AppLogRegImgsConstant {
   String get toPng => "assets/images/logreg_img/$value.jpg";
   AssetImage get toImg => AssetImage(toPng);
 }
+
+enum AppConnectionErrorImgConstant {
+  connectionErrorImg('undraw_Signal_searching_re_yl8n');
+
+  final String value;
+  const AppConnectionErrorImgConstant(this.value);
+
+  String get toPng => "assets/images/connectionerror_img/$value.png";
+  Image get toImg => Image.asset(toPng);
+}
