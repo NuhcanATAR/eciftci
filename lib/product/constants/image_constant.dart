@@ -35,3 +35,14 @@ enum AppConnectionErrorImgConstant {
   String get toPng => "assets/images/connectionerror_img/$value.png";
   Image get toImg => Image.asset(toPng);
 }
+
+enum AppIncomeGoesImgConstant {
+  noList('undraw_Waiting__for_you_ldha'),
+  errorList('undraw_Warning_re_eoyh');
+
+  final String value;
+  const AppIncomeGoesImgConstant(this.value);
+
+  String get toPng => "assets/images/incomegoes_img/$value.png";
+  Image get toImg => Image.asset(toPng);
+}
