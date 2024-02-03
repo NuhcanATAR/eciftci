@@ -24,7 +24,7 @@ mixin IncomeBlocMixin {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else if (state is IncomeAddError) {
       final snackBar = SnackBar(
-        backgroundColor: MainAppColorConstant.mainColorBackground,
+        backgroundColor: Colors.red,
         content: LabelMediumWhiteText(
           text: state.errorValue,
           textAlign: TextAlign.left,
@@ -62,7 +62,7 @@ mixin IncomeBlocMixin {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else if (state is IncomeUpdateError) {
       final snackBar = SnackBar(
-        backgroundColor: MainAppColorConstant.mainColorBackground,
+        backgroundColor: Colors.red,
         content: LabelMediumWhiteText(
           text: state.errorValue,
           textAlign: TextAlign.left,
@@ -101,7 +101,7 @@ mixin IncomeBlocMixin {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else if (state is IncomeDeleteError) {
       final snackBar = SnackBar(
-        backgroundColor: MainAppColorConstant.mainColorBackground,
+        backgroundColor: Colors.red,
         content: LabelMediumWhiteText(
           text: state.errorValue,
           textAlign: TextAlign.left,
