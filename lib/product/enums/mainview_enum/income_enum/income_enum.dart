@@ -9,7 +9,7 @@ enum IncomeViewStrings {
 
   incomeCategoryInputText('Gelir Kategorisi *'),
   incomeTitleInputText('Gelir başlık *'),
-  incomeExplanationInputText('Açıklama (isteğe bağlı)'),
+  incomeExplanationInputText('Açıklama'),
   incomeValueInputText('Gelir Değeri'),
   incomeSavedButtonText('Geliri Kaydet'),
 
@@ -21,7 +21,13 @@ enum IncomeViewStrings {
       'Filtreleme sonuçlarınızı görüntülerken hata oluştu, daha sonra tekrar deneyiniz.'),
   filterListNoTitleText('Uygun Sonuç Bulunamadı!'),
   filterListNoSubTitleText(
-      'Filtreleme sonucunuza göre uygun gelir bulunamadı.');
+      'Filtreleme sonucunuza göre uygun gelir bulunamadı.'),
+
+  dialogIncomeDeleteTitleText('Geliri Kaldırmak İstediğinize Eminmisiniz?'),
+  dialogIncomeDeleteSubTitleText(
+      'Gelir gerçekten kaldırmak istediğinize eminmisiniz, gelir kaldırıldıktan sonra geri alınamaz.'),
+
+  incomeUpdateButtonText('Geliri Güncelle');
 
   final String value;
   const IncomeViewStrings(this.value);

@@ -82,6 +82,7 @@ mixin IncomeBlocMixin {
 
   void incomeDeleteListenerBloc(context, state) {
     if (state is IncomeDeleteSuccess) {
+      Navigator.pop(context);
       final snackBar = SnackBar(
         backgroundColor: MainAppColorConstant.mainColorBackground,
         content: const LabelMediumWhiteText(

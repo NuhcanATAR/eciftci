@@ -14,6 +14,22 @@ enum IncomeGoesServiceDB {
           .collection("INCOME")
           .get();
 
+  DocumentReference<Map<String, dynamic>> incomeDeleteRef(
+          Map<String, dynamic> data) =>
+      FirebaseFirestore.instance
+          .collection(name)
+          .doc(FirebaseService().authID)
+          .collection("INCOME")
+          .doc(data['ID']);
+
+  DocumentReference<Map<String, dynamic>> incomeUpdateRef(
+          Map<String, dynamic> data) =>
+      FirebaseFirestore.instance
+          .collection(name)
+          .doc(FirebaseService().authID)
+          .collection("INCOME")
+          .doc(data['ID']);
+
   Future<QuerySnapshot<Map<String, dynamic>>> incomeFilterRefTable(
           dynamic categoryID, int year) =>
       FirebaseFirestore.instance
@@ -48,6 +64,14 @@ enum IncomeGoesServiceDB {
           .doc(FirebaseService().authID)
           .collection("INCOMECATEGORY")
           .doc(data['ID']);
+
+  DocumentReference<Map<String, dynamic>> incomeMainCategoryDocRef(
+          Map<String, dynamic> data) =>
+      FirebaseFirestore.instance
+          .collection(name)
+          .doc(FirebaseService().authID)
+          .collection("INCOMECATEGORY")
+          .doc(data['INCOMECATEGORYID']);
 
   // list query parameter
 

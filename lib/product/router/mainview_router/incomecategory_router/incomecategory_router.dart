@@ -11,7 +11,7 @@ class IncomeCategoryRouterService {
   // category add dialog
   void categoryAddDialog(
       BuildContext context, TextEditingController categoryName) {
-    var alertDialog = AlertDialog(
+    dynamic alertDialog = AlertDialog(
       title: BodyMediumBlackBoldText(
         text: IncomeCategoryViewStrings.dialogTitleText.value,
         textAlign: TextAlign.center,
