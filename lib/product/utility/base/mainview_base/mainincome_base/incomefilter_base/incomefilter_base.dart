@@ -2,9 +2,9 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
-import 'package:eciftci/product/model/mainview_model/incomefilter_model/incomefilter_model.dart';
-import 'package:eciftci/product/router/mainview_router/incomefilter_router/incomefilter_router.dart';
-import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import 'package:eciftci/product/model/mainview_model/mainincome_model/incomefilter_model/incomefilter_model.dart';
+import 'package:eciftci/product/router/mainview_router/mainincome_router/incomefilter_router/incomefilter_router.dart';
+import 'package:eciftci/product/utility/database/mainview_db/income_db/income_db.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../product/extension/view_extension.dart';
 
@@ -44,7 +44,7 @@ abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
 
   void fetchMainIncomeCategories() async {
     final snapshotCategory =
-        await IncomeGoesServiceDB.INCOMEGOESCATEGORYS.incomeCategoryRefTable;
+        await IncomeServiceDB.INCOMEGOESCATEGORYS.incomeCategoryRefTable;
     setState(() {
       mainIncomeCategory = snapshotCategory.docs
           .map((docCategory) => MainIncomeCategory.fromSnapshot(docCategory))
@@ -53,7 +53,7 @@ abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
   }
 
   Future<List> getFilterPriceList() async {
-    QuerySnapshot querySnapshot = await IncomeGoesServiceDB.INCOMEGOES
+    QuerySnapshot querySnapshot = await IncomeServiceDB.INCOMEGOES
         .incomeFilterRefTable(
             selectMainIncomeCategory?.id, modelService.selectedYear);
 

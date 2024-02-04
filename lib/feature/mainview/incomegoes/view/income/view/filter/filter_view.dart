@@ -1,14 +1,14 @@
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/filter/widget/incomefilterlist_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/filter/widget/totalincomecard_widget.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/enums/mainview_enum/income_enum/income_enum.dart';
+import 'package:eciftci/product/enums/mainview_enum/mainincome_enum/income_enum/income_enum.dart';
 import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/incomefilter_base/incomefilter_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../../../../../../product/model/mainview_model/incomefilter_model/incomefilter_model.dart';
+import '../../../../../../../product/model/mainview_model/mainincome_model/incomefilter_model/incomefilter_model.dart';
 
 class FilterView extends StatefulWidget {
   const FilterView({super.key});

@@ -1,10 +1,10 @@
-import 'package:eciftci/product/bloc/mainview_bloc/incomecategory_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../../../product/enums/mainview_enum/incomecategory_enum/incomecategory_enum.dart';
+import '../../../../../../../../product/enums/mainview_enum/mainincome_enum/incomecategory_enum/incomecategory_enum.dart';
 
 class CategoryUpdateButtonWidget extends StatelessWidget {
   const CategoryUpdateButtonWidget(

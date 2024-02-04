@@ -4,7 +4,7 @@ import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../../../../../../../product/enums/mainview_enum/incomecategory_enum/incomecategory_enum.dart';
+import '../../../../../../../../product/enums/mainview_enum/mainincome_enum/incomecategory_enum/incomecategory_enum.dart';
 
 class IncomeCategoryListErrorView extends StatelessWidget {
   const IncomeCategoryListErrorView({super.key});

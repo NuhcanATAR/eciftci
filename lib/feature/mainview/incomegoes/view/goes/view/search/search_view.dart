@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/search/widget/incomecard_widget.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/utility/base/mainview_base/maingose_base/goessearch_base/goessearch_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/maingoes_base/goessearch_base/goessearch_base.dart';
 import 'package:eciftci/product/utility/database/mainview_db/goes_db/goes_db.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';

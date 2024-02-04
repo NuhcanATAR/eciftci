@@ -1,11 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
-import 'package:eciftci/product/model/mainview_model/incomesearch_model/incomesearch_model.dart';
+import 'package:eciftci/product/model/mainview_model/mainincome_model/incomesearch_model/incomesearch_model.dart';
 
 import 'package:flutter/material.dart';
 import '../../../../../../product/extension/view_extension.dart';
-import '../../../../../router/mainview_router/incomesearch_router/incomesearch_router.dart';
+import '../../../../../router/mainview_router/mainincome_router/incomesearch_router/incomesearch_router.dart';
 
 abstract class MainIncomeSearchBase<T extends StatefulWidget> extends State<T> {
   // model service

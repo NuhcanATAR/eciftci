@@ -5,7 +5,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/goescategoryl
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/goescategorylist/view/nocategorylist_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/goescategorylist/widget/categorycard_widget.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/utility/base/mainview_base/maingose_base/goes_base/categorygoes_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/maingoes_base/goes_base/categorygoes_base.dart';
 import 'package:eciftci/product/utility/database/mainview_db/goes_db/goes_db.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';

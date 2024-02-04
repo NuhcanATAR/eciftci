@@ -1,9 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
-import 'package:eciftci/product/mixin/mainview_mixin/incomecategory_mixin/incomecategory_mixin.dart';
-import 'package:eciftci/product/model/mainview_model/incomecategory_model/incomecategory_model.dart';
-import 'package:eciftci/product/router/mainview_router/incomecategory_router/incomecategory_router.dart';
+import 'package:eciftci/product/mixin/mainview_mixin/mainincome_mixins/incomecategory_mixin/incomecategory_mixin.dart';
+import 'package:eciftci/product/model/mainview_model/mainincome_model/incomecategory_model/incomecategory_model.dart';
+import 'package:eciftci/product/router/mainview_router/mainincome_router/incomecategory_router/incomecategory_router.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../product/extension/view_extension.dart';
 

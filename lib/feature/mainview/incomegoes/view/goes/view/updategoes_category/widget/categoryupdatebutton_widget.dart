@@ -1,10 +1,10 @@
-import 'package:eciftci/product/bloc/mainview_bloc/goescategory_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goescategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../../../product/enums/mainview_enum/goescategory_enum/goescategory_enum.dart';
+import '../../../../../../../../product/enums/mainview_enum/maingoes_enum/goescategory_enum/goescategory_enum.dart';
 
 class CategoryUpdateButtonWidget extends StatelessWidget {
   const CategoryUpdateButtonWidget(
@@ -31,7 +31,7 @@ class CategoryUpdateButtonWidget extends StatelessWidget {
         onTap: () {
           if (goesCategoryModelService.formGoesCategoryUpdateKey.currentState!
               .validate()) {
-            BlocProvider.of<GoesCategoryCubit>(context).incomeCategoryUpdate(
+            BlocProvider.of<GoesCategoryCubit>(context).goesCategoryUpdate(
               categoryNameUpdate.text,
               data,
             );

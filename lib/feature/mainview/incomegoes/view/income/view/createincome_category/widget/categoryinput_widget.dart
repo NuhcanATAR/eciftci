@@ -1,4 +1,4 @@
-import 'package:eciftci/product/enums/mainview_enum/incomecategory_enum/incomecategory_enum.dart';
+import 'package:eciftci/product/enums/mainview_enum/mainincome_enum/incomecategory_enum/incomecategory_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';

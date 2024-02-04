@@ -5,7 +5,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomecateg
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomecategorylist/widget/categorycard_widget.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/income_base/categoryincome_base.dart';
-import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import 'package:eciftci/product/utility/database/mainview_db/income_db/income_db.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +57,7 @@ class _IncomeCategoryListViewState
         ],
       ),
       body: StreamBuilder<QuerySnapshot>(
-        stream: IncomeGoesServiceDB.INCOMEGOESCATEGORYS.incomeCategoryListTable,
+        stream: IncomeServiceDB.INCOMEGOESCATEGORYS.incomeCategoryListTable,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return buildListErrorViewWidget;

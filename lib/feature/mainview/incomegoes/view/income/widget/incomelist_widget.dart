@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/constants/image_constant.dart';
-import 'package:eciftci/product/enums/mainview_enum/income_enum/income_enum.dart';
-import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import 'package:eciftci/product/enums/mainview_enum/mainincome_enum/income_enum/income_enum.dart';
+import 'package:eciftci/product/utility/database/mainview_db/income_db/income_db.dart';
 import 'package:eciftci/product/widget/text_widget/body_medium_text.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class IncomeListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: IncomeGoesServiceDB.INCOMEGOES.incomeListTable,
+      stream: IncomeServiceDB.INCOMEGOES.incomeListTable,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return buildListErrorWidget;

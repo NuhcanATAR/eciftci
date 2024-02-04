@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import 'package:eciftci/product/utility/database/mainview_db/income_db/income_db.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../product/widget/text_widget/label_medium_text.dart';
@@ -122,7 +122,7 @@ class CreateIncomeAndCategoryButtonsWidget extends StatelessWidget {
           //
           GestureDetector(
             onTap: () async {
-              final incomeCategoryRef = await IncomeGoesServiceDB
+              final incomeCategoryRef = await IncomeServiceDB
                   .INCOMEGOESCATEGORYS.incomeCategoryRefTable;
 
               if (incomeCategoryRef.docs.isEmpty) {

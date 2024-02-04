@@ -3,7 +3,7 @@ import 'package:eciftci/product/widget/text_widget/body_medium_text.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../../../product/enums/mainview_enum/income_enum/income_enum.dart';
+import '../../../../../../../../product/enums/mainview_enum/mainincome_enum/income_enum/income_enum.dart';
 
 class FilterListErrorView extends StatelessWidget {
   const FilterListErrorView({super.key});

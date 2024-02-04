@@ -1,15 +1,15 @@
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/updategoes_category/widget/categoryinput_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/updategoes_category/widget/categoryupdatebutton_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/updategoes_category/widget/titlesubtitle_widget.dart';
-import 'package:eciftci/product/bloc/mainview_bloc/goescategory_bloc/state/state.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goescategory_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/utility/base/mainview_base/maingose_base/goes_base/categorygoes_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/maingoes_base/goes_base/categorygoes_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../../../../../../product/bloc/mainview_bloc/goescategory_bloc/cubit/cubit.dart';
+import '../../../../../../../product/bloc/mainview_bloc/maingoes_bloc/goescategory_bloc/cubit/cubit.dart';
 
 class GoesCategoryUpdateView extends StatefulWidget {
   const GoesCategoryUpdateView({required this.data, super.key});

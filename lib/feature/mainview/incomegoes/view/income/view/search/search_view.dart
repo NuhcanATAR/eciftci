@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/search/widget/incomecard_widget.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/incomesearch_base/incomesearch_base.dart';
-import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import 'package:eciftci/product/utility/database/mainview_db/income_db/income_db.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,7 +92,7 @@ class _SearchViewState extends MainIncomeSearchBase<SearchView> {
   Widget get buildIncomeListWidget => Expanded(
         flex: 3,
         child: StreamBuilder<QuerySnapshot>(
-          stream: IncomeGoesServiceDB.INCOMEGOES.incomeListTable,
+          stream: IncomeServiceDB.INCOMEGOES.incomeListTable,
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {

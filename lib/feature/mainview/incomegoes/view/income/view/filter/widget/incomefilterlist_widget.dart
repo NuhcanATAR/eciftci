@@ -3,7 +3,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/income/view/filter/view
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/filter/view/filterlistloading_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/filter/view/filterlistno_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/filter/widget/filterincomecard_widget.dart';
-import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import 'package:eciftci/product/utility/database/mainview_db/income_db/income_db.dart';
 
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class IncomeFilterListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: StreamBuilder<QuerySnapshot>(
-        stream: IncomeGoesServiceDB.INCOMEGOES.incomeListFilterTable(
+        stream: IncomeServiceDB.INCOMEGOES.incomeListFilterTable(
           selectMainIncomeCategory?.id.toString(),
           modelService.selectedYear,
         ),

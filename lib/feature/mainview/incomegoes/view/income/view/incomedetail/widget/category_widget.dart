@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../../../product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
+import '../../../../../../../../product/utility/database/mainview_db/income_db/income_db.dart';
 import '../../../../../../../../product/widget/text_widget/label_medium_text.dart';
 
 class IncomeCategoryWidget extends StatelessWidget {
@@ -18,7 +18,7 @@ class IncomeCategoryWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: FutureBuilder<DocumentSnapshot>(
-          future: IncomeGoesServiceDB.INCOMEGOESCATEGORYS
+          future: IncomeServiceDB.INCOMEGOESCATEGORYS
               .incomeMainCategoryDocRef(data)
               .get(),
           builder:

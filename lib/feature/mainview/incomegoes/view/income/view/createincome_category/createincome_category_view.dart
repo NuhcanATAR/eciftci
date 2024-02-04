@@ -1,8 +1,8 @@
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/createincome_category/widget/categoryinput_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/createincome_category/widget/categorysavedbutton_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/createincome_category/widget/titlesubtitle_widget.dart';
-import 'package:eciftci/product/bloc/mainview_bloc/incomecategory_bloc/cubit/cubit.dart';
-import 'package:eciftci/product/bloc/mainview_bloc/incomecategory_bloc/state/state.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/income_base/categoryincome_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';

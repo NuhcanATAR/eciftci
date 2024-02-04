@@ -3,7 +3,7 @@ import 'package:eciftci/product/widget/text_widget/body_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../../../../../../../product/enums/mainview_enum/incomecategory_enum/incomecategory_enum.dart';
+import '../../../../../../../../product/enums/mainview_enum/mainincome_enum/incomecategory_enum/incomecategory_enum.dart';
 import '../../../../../../../../product/widget/text_widget/label_medium_text.dart';
 
 class IncomeCategoryNoListView extends StatelessWidget {

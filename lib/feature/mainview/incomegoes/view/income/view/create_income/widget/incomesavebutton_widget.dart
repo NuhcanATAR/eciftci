@@ -3,8 +3,8 @@ import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../../../product/bloc/mainview_bloc/income_bloc/cubit/cubit.dart';
-import '../../../../../../../../product/enums/mainview_enum/income_enum/income_enum.dart';
+import '../../../../../../../../product/bloc/mainview_bloc/mainincome_bloc/income_bloc/cubit/cubit.dart';
+import '../../../../../../../../product/enums/mainview_enum/mainincome_enum/income_enum/income_enum.dart';
 
 class IncomeSaveButtonWidget extends StatelessWidget {
   const IncomeSaveButtonWidget(

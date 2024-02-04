@@ -2,8 +2,8 @@ import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomedetai
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomedetail/view/incomeupdate/widget/incomeupdatebutton_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomedetail/view/incomeupdate/widget/incometitle_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomedetail/view/incomeupdate/widget/incomevalue_widget.dart';
-import 'package:eciftci/product/bloc/mainview_bloc/income_bloc/cubit/cubit.dart';
-import 'package:eciftci/product/bloc/mainview_bloc/income_bloc/state/state.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/income_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/income_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/income_base/mainincome_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';

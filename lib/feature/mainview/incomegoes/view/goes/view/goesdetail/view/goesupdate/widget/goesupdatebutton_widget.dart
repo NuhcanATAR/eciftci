@@ -1,10 +1,10 @@
-import 'package:eciftci/product/bloc/mainview_bloc/goes_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goes_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../../../../../product/enums/mainview_enum/goes_enum/goes_enum.dart';
+import '../../../../../../../../../../product/enums/mainview_enum/maingoes_enum/goes_enum/goes_enum.dart';
 
 class GoesUpdateButtonWidget extends StatelessWidget {
   const GoesUpdateButtonWidget(
@@ -33,7 +33,7 @@ class GoesUpdateButtonWidget extends StatelessWidget {
       onTap: () {
         if (modelService.formGoesUpdateKey.currentState!.validate()) {
           int value = int.parse(valueController.text);
-          BlocProvider.of<GoesCubit>(context).incomeUpdate(
+          BlocProvider.of<GoesCubit>(context).goesUpdate(
             data,
             titleController.text,
             explanationController.text,

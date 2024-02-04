@@ -1,7 +1,7 @@
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/updateincome_category/widget/categoryinput_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/updateincome_category/widget/categoryupdatebutton_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/updateincome_category/widget/titlesubtitle_widget.dart';
-import 'package:eciftci/product/bloc/mainview_bloc/incomecategory_bloc/state/state.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/income_base/categoryincome_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 
-import '../../../../../../../product/bloc/mainview_bloc/incomecategory_bloc/cubit/cubit.dart';
+import '../../../../../../../product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/cubit/cubit.dart';
 
 class IncomeCategoryUpdateView extends StatefulWidget {
   const IncomeCategoryUpdateView({required this.data, super.key});

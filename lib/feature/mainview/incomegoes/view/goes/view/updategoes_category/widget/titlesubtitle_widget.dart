@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../../../product/enums/mainview_enum/goescategory_enum/goescategory_enum.dart';
+import '../../../../../../../../product/enums/mainview_enum/maingoes_enum/goescategory_enum/goescategory_enum.dart';
 import '../../../../../../../../product/widget/text_widget/body_medium_text.dart';
 import '../../../../../../../../product/widget/text_widget/label_medium_text.dart';
 
