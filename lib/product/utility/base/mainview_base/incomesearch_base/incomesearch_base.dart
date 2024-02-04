@@ -1,3 +1,6 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 import 'package:eciftci/product/model/mainview_model/incomesearch_model/incomesearch_model.dart';
 
 import 'package:flutter/material.dart';
@@ -16,4 +19,19 @@ abstract class MainIncomeSearchBase<T extends StatefulWidget> extends State<T> {
 
   late final maxWidth = ViewSizeModelExtension(context).mediaSize.width;
   late final maxHeight = ViewSizeModelExtension(context).mediaSize.height;
+
+  @override
+  void initState() {
+    super.initState();
+    checkControl();
+  }
+
+  void checkControl() async {
+    bool result = await DataConnectionChecker().hasConnection;
+    if (result == true) {
+      modelService.logger.i("İnternet Bağlandı!!");
+    } else {
+      routerService.connectionErrorViewNavigatorRouter(context);
+    }
+  }
 }

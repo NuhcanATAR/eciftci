@@ -2,6 +2,8 @@ import 'package:eciftci/feature/splash/splash_view/splash.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/login_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/password_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/register_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/goes_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/goescategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/income_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/incomecategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/initialize/app_start.dart';
@@ -27,6 +29,12 @@ void main() async {
         ),
         BlocProvider<IncomeCubit>(
           create: (BuildContext context) => IncomeCubit(),
+        ),
+        BlocProvider<GoesCategoryCubit>(
+          create: (BuildContext context) => GoesCategoryCubit(),
+        ),
+        BlocProvider<GoesCubit>(
+          create: (BuildContext context) => GoesCubit(),
         ),
       ],
       child: const MainApp(),

@@ -22,7 +22,7 @@ class _IncomeGoesViewState extends State<IncomeGoesView> {
         elevation: 0,
         centerTitle: true,
         title: const LabelMediumMainColorText(
-          text: "Geli & Gider",
+          text: "Gelir & Gider",
           textAlign: TextAlign.center,
         ),
       ),

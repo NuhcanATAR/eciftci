@@ -25,11 +25,9 @@ abstract class MainIncomeBase<T extends StatefulWidget> extends State<T>
   @override
   void initState() {
     super.initState();
-    setState(() {
-      checkControl();
-    });
-
+    checkControl();
     fetchMainIncomeCategories();
+    mainIncomeCategory = [];
   }
 
   late List<MainIncomeCategory> mainIncomeCategory;

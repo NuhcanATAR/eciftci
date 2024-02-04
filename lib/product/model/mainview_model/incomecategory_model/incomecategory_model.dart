@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:logger/logger.dart';
 
 class IncomeCategoryModelService {
   // form key
@@ -16,4 +17,6 @@ class IncomeCategoryModelService {
       return null;
     }
   }
+
+  dynamic logger = Logger();
 }

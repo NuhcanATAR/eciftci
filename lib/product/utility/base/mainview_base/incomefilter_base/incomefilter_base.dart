@@ -1,4 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 import 'package:eciftci/product/model/mainview_model/incomefilter_model/incomefilter_model.dart';
 import 'package:eciftci/product/router/mainview_router/incomefilter_router/incomefilter_router.dart';
 import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
@@ -22,8 +25,18 @@ abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
   @override
   void initState() {
     super.initState();
+    checkControl();
     fetchMainIncomeCategories();
     mainIncomeCategory = [];
+  }
+
+  void checkControl() async {
+    bool result = await DataConnectionChecker().hasConnection;
+    if (result == true) {
+      modelService.logger.i("İnternet Bağlandı!!");
+    } else {
+      routerService.connectionErrorViewNavigatorRouter(context);
+    }
   }
 
   late List<MainIncomeCategory> mainIncomeCategory;

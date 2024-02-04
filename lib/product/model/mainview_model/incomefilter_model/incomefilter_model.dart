@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:logger/logger.dart';
 
 class MainIncomeCategory {
   final String id;
@@ -17,4 +18,6 @@ class MainIncomeCategory {
 class IncomeFilterModelService {
   List<int> years = List.generate(10, (index) => 2024 + index);
   int selectedYear = DateTime.now().year;
+
+  dynamic logger = Logger();
 }

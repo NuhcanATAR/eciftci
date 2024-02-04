@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+import '../../../../../../../../product/enums/mainview_enum/goescategory_enum/goescategory_enum.dart';
+import '../../../../../../../../product/widget/text_widget/body_medium_text.dart';
+import '../../../../../../../../product/widget/text_widget/label_medium_text.dart';
+
+class TitleSubTitleWidget extends StatelessWidget {
+  const TitleSubTitleWidget({required this.maxWidth, super.key});
+
+  final dynamic maxWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        // title
+        SizedBox(
+          width: maxWidth,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: BodyMediumBlackBoldText(
+              text: GoesCategoryViewStrings.updateGoesTitleText.value,
+              textAlign: TextAlign.left,
+            ),
+          ),
+        ),
+        // sub title
+        SizedBox(
+          width: maxWidth,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 5, bottom: 20),
+            child: LabelMediumBlackText(
+              text: GoesCategoryViewStrings.updateGoesSubTitleText.value,
+              textAlign: TextAlign.left,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

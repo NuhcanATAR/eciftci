@@ -1,3 +1,4 @@
+import 'package:eciftci/feature/mainview/connectionerror/connectionerror_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/createincome_category/createincome_category_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/updateincome_category/incomecategoryupdate_view.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/incomecategory_bloc/cubit/cubit.dart';
@@ -81,6 +82,16 @@ class IncomeCategoryRouterService {
         builder: (context) => IncomeCategoryUpdateView(
           data: data,
         ),
+      ),
+    );
+  }
+
+  // connection error view
+  void connectionErrorViewNavigatorRouter(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ConnectionErrorView(),
       ),
     );
   }

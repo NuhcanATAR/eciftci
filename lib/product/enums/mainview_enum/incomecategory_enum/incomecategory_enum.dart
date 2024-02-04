@@ -2,9 +2,6 @@ enum IncomeCategoryViewStrings {
   createIncomeTitleText('Gelir Kategorisi Oluşturun'),
   createIncomeSubTitleText(
       'Gelir kategorilerinizi kendinize özel kategoriler haline getirebilirsiniz.'),
-  createGoesTitleText('Gider Kategorisi Oluşturun'),
-  createGoesSubTitleText(
-      'Gider kategorilerinizi kendinize özel kategoriler haline getirebilirsiniz.'),
 
   incomecategoryInputText('Gelir Kategoriniz *'),
   goescategoryInputText('Gider Kategoriniz *'),
