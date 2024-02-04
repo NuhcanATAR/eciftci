@@ -1,18 +1,19 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
-import 'package:eciftci/product/model/mainview_model/incomesearch_model/incomesearch_model.dart';
-
+import 'package:eciftci/product/mixin/mainview_mixin/incomecategory_mixin/incomecategory_mixin.dart';
+import 'package:eciftci/product/model/mainview_model/incomecategory_model/incomecategory_model.dart';
+import 'package:eciftci/product/router/mainview_router/incomecategory_router/incomecategory_router.dart';
 import 'package:flutter/material.dart';
-import '../../../../../product/extension/view_extension.dart';
-import '../../../../router/mainview_router/incomesearch_router/incomesearch_router.dart';
+import '../../../../../../product/extension/view_extension.dart';
 
-abstract class MainIncomeSearchBase<T extends StatefulWidget> extends State<T> {
+abstract class MainIncomeCategoryBase<T extends StatefulWidget> extends State<T>
+    with IncomeCategoryBlocMixin {
   // model service
-  IncomeSearchModelService modelService = IncomeSearchModelService();
+  IncomeCategoryModelService incomeCategoryModelService =
+      IncomeCategoryModelService();
   // router service
-  IncomeSearchRouterService routerService = IncomeSearchRouterService();
-
+  IncomeCategoryRouterService routerService = IncomeCategoryRouterService();
   // screens size
   double dynamicWidth(double value) => maxWidth * value;
   double dynamicHeight(double value) => maxHeight * value;
@@ -29,7 +30,7 @@ abstract class MainIncomeSearchBase<T extends StatefulWidget> extends State<T> {
   void checkControl() async {
     bool result = await DataConnectionChecker().hasConnection;
     if (result == true) {
-      modelService.logger.i("İnternet Bağlandı!!");
+      incomeCategoryModelService.logger.i("İnternet Bağlandı!!");
     } else {
       routerService.connectionErrorViewNavigatorRouter(context);
     }

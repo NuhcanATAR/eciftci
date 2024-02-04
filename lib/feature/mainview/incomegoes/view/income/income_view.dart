@@ -4,7 +4,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/income/widget/createinc
 import 'package:eciftci/feature/mainview/incomegoes/view/income/widget/incomelist_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/widget/incometotalcard_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/widget/searchfilter_widget.dart';
-import 'package:eciftci/product/utility/base/mainview_base/income_base/mainincome_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/income_base/mainincome_base.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 

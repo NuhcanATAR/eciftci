@@ -2,19 +2,19 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
-import 'package:eciftci/product/model/mainview_model/incomefilter_model/incomefilter_model.dart';
-import 'package:eciftci/product/router/mainview_router/incomefilter_router/incomefilter_router.dart';
+import 'package:eciftci/product/mixin/mainview_mixin/income_mixin/income_mixin.dart';
+import 'package:eciftci/product/model/mainview_model/income_model/income_model.dart';
+import 'package:eciftci/product/router/mainview_router/income_router/income_router.dart';
 import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
 import 'package:flutter/material.dart';
-import '../../../../../product/extension/view_extension.dart';
+import '../../../../../../product/extension/view_extension.dart';
 
-abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
+abstract class MainIncomeBase<T extends StatefulWidget> extends State<T>
+    with IncomeBlocMixin {
   // model service
-  IncomeFilterModelService modelService = IncomeFilterModelService();
-
+  IncomeModelService modelService = IncomeModelService();
   // router service
-  IncomeFilterRouterService routerService = IncomeFilterRouterService();
-
+  IncomeRouterService routerService = IncomeRouterService();
   // screens size
   double dynamicWidth(double value) => maxWidth * value;
   double dynamicHeight(double value) => maxHeight * value;
@@ -30,6 +30,9 @@ abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
     mainIncomeCategory = [];
   }
 
+  late List<MainIncomeCategory> mainIncomeCategory;
+  MainIncomeCategory? selectMainIncomeCategory;
+
   void checkControl() async {
     bool result = await DataConnectionChecker().hasConnection;
     if (result == true) {
@@ -39,8 +42,25 @@ abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
     }
   }
 
-  late List<MainIncomeCategory> mainIncomeCategory;
-  MainIncomeCategory? selectMainIncomeCategory;
+  Future<List> getPriceList() async {
+    QuerySnapshot querySnapshot =
+        await IncomeGoesServiceDB.INCOMEGOES.incomeRefTable;
+
+    List priceList = querySnapshot.docs.map((doc) {
+      return doc['VALUE'] ?? 0;
+    }).toList();
+
+    return priceList;
+  }
+
+  Future<int> calculateTotalPrice() async {
+    List priceList = await getPriceList();
+
+    int total = priceList.fold(
+        0, (previousValue, element) => previousValue + element as int);
+
+    return total;
+  }
 
   void fetchMainIncomeCategories() async {
     final snapshotCategory =
@@ -50,26 +70,5 @@ abstract class MainIncomeFilterBase<T extends StatefulWidget> extends State<T> {
           .map((docCategory) => MainIncomeCategory.fromSnapshot(docCategory))
           .toList();
     });
-  }
-
-  Future<List> getFilterPriceList() async {
-    QuerySnapshot querySnapshot = await IncomeGoesServiceDB.INCOMEGOES
-        .incomeFilterRefTable(
-            selectMainIncomeCategory?.id, modelService.selectedYear);
-
-    List priceList = querySnapshot.docs.map((doc) {
-      return doc['VALUE'] ?? 0;
-    }).toList();
-
-    return priceList;
-  }
-
-  Future<int> calculateFilterTotalPrice() async {
-    List priceList = await getFilterPriceList();
-
-    int total = priceList.fold(
-        0, (previousValue, element) => previousValue + element as int);
-
-    return total;
   }
 }

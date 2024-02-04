@@ -2,7 +2,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/goes/widget/creategoesa
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/widget/goeslist_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/widget/goestotalcard_widget.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/goes/widget/searchfilter_widget.dart';
-import 'package:eciftci/product/utility/base/mainview_base/goes_base/maingoes_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/maingose_base/goes_base/maingoes_base.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 

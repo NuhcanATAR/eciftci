@@ -4,7 +4,7 @@ import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart
 import 'package:eciftci/product/model/mainview_model/goessearch_model/goessearch_model.dart';
 import 'package:eciftci/product/router/mainview_router/goessearch_router/goessearch_router.dart';
 import 'package:flutter/material.dart';
-import '../../../../../product/extension/view_extension.dart';
+import '../../../../../../product/extension/view_extension.dart';
 
 abstract class MainGoesSearchBase<T extends StatefulWidget> extends State<T> {
   // model service

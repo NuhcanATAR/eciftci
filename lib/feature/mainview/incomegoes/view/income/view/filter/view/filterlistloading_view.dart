@@ -22,7 +22,7 @@ class FilterListLoadingView extends StatelessWidget {
             child: AppIncomeGoesImgConstant.errorList.toImg),
         // title
         const Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 5),
+          padding: EdgeInsets.only(top: 10, bottom: 5),
           child: BodyMediumBlackBoldText(
             text: "Yükleniyor",
             textAlign: TextAlign.center,

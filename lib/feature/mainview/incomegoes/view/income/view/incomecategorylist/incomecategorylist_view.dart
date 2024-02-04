@@ -4,7 +4,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomecateg
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomecategorylist/view/nocategorylist_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/view/income/view/incomecategorylist/widget/categorycard_widget.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/utility/base/mainview_base/income_base/categoryincome_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/mainincome_base/income_base/categoryincome_base.dart';
 import 'package:eciftci/product/utility/database/mainview_db/incomegoes_db/incomegoes_db.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';

@@ -2,19 +2,19 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
-import 'package:eciftci/product/mixin/mainview_mixin/goes_mixin/goes_mixin.dart';
-import 'package:eciftci/product/model/mainview_model/goes_model/goes_model.dart';
-import 'package:eciftci/product/router/mainview_router/goes_router/goes_router.dart';
+import 'package:eciftci/product/model/mainview_model/goesfilter_model/goesfilter_model.dart';
+import 'package:eciftci/product/router/mainview_router/goesfilter_router/goesfilter_router.dart';
 import 'package:eciftci/product/utility/database/mainview_db/goes_db/goes_db.dart';
 import 'package:flutter/material.dart';
-import '../../../../../product/extension/view_extension.dart';
+import '../../../../../../product/extension/view_extension.dart';
 
-abstract class MainGoesBase<T extends StatefulWidget> extends State<T>
-    with GoesBlocMixin {
+abstract class MainGoesFilterBase<T extends StatefulWidget> extends State<T> {
   // model service
-  GoesModelService modelService = GoesModelService();
+  GoesFilterModelService modelService = GoesFilterModelService();
+
   // router service
-  GoesRouterService routerService = GoesRouterService();
+  GoesFilterRouterService routerService = GoesFilterRouterService();
+
   // screens size
   double dynamicWidth(double value) => maxWidth * value;
   double dynamicHeight(double value) => maxHeight * value;
@@ -25,13 +25,10 @@ abstract class MainGoesBase<T extends StatefulWidget> extends State<T>
   @override
   void initState() {
     super.initState();
-    checkControl();
-    fetchMainIncomeCategories();
+    fetchMainGoesCategories();
     mainGoesCategory = [];
+    checkControl();
   }
-
-  late List<MainGoesCategory> mainGoesCategory;
-  MainGoesCategory? selectMainGoesCategory;
 
   void checkControl() async {
     bool result = await DataConnectionChecker().hasConnection;
@@ -42,8 +39,23 @@ abstract class MainGoesBase<T extends StatefulWidget> extends State<T>
     }
   }
 
-  Future<List> getPriceList() async {
-    QuerySnapshot querySnapshot = await GoesServiceDB.INCOMEGOES.goesRefTable;
+  late List<MainGoesCategory> mainGoesCategory;
+  MainGoesCategory? selectMainGoesCategory;
+
+  void fetchMainGoesCategories() async {
+    final snapshotCategory =
+        await GoesServiceDB.INCOMEGOESCATEGORYS.goesCategoryRefTable;
+    setState(() {
+      mainGoesCategory = snapshotCategory.docs
+          .map((docCategory) => MainGoesCategory.fromSnapshot(docCategory))
+          .toList();
+    });
+  }
+
+  Future<List> getFilterPriceList() async {
+    QuerySnapshot querySnapshot = await GoesServiceDB.INCOMEGOES
+        .goesFilterRefTable(
+            selectMainGoesCategory?.id, modelService.selectedYear);
 
     List priceList = querySnapshot.docs.map((doc) {
       return doc['VALUE'] ?? 0;
@@ -52,22 +64,12 @@ abstract class MainGoesBase<T extends StatefulWidget> extends State<T>
     return priceList;
   }
 
-  Future<int> calculateTotalPrice() async {
-    List priceList = await getPriceList();
+  Future<int> calculateFilterTotalPrice() async {
+    List priceList = await getFilterPriceList();
 
     int total = priceList.fold(
         0, (previousValue, element) => previousValue + element as int);
 
     return total;
-  }
-
-  void fetchMainIncomeCategories() async {
-    final snapshotCategory =
-        await GoesServiceDB.INCOMEGOESCATEGORYS.goesCategoryRefTable;
-    setState(() {
-      mainGoesCategory = snapshotCategory.docs
-          .map((docCategory) => MainGoesCategory.fromSnapshot(docCategory))
-          .toList();
-    });
   }
 }

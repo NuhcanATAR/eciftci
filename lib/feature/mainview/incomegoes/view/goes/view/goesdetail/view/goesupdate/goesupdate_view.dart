@@ -5,7 +5,7 @@ import 'package:eciftci/feature/mainview/incomegoes/view/goes/view/goesdetail/vi
 import 'package:eciftci/product/bloc/mainview_bloc/goes_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/goes_bloc/state/state.dart';
 import 'package:eciftci/product/constants/color_constant.dart';
-import 'package:eciftci/product/utility/base/mainview_base/goes_base/maingoes_base.dart';
+import 'package:eciftci/product/utility/base/mainview_base/maingose_base/goes_base/maingoes_base.dart';
 import 'package:eciftci/product/widget/text_widget/label_medium_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
