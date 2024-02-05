@@ -46,3 +46,14 @@ enum AppIncomeGoesImgConstant {
   String get toPng => "assets/images/incomegoes_img/$value.png";
   Image get toImg => Image.asset(toPng);
 }
+
+enum AppPlotsImgConstant {
+  noList('undraw_Waiting__for_you_ldha'),
+  errorList('undraw_Warning_re_eoyh');
+
+  final String value;
+  const AppPlotsImgConstant(this.value);
+
+  String get toPng => "assets/images/plots_img/$value.png";
+  Image get toImg => Image.asset(toPng);
+}

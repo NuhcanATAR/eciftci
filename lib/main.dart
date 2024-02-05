@@ -6,6 +6,7 @@ import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goes_bloc/cubit
 import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goescategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/income_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainplots_bloc/plots_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/initialize/app_start.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,6 +36,9 @@ void main() async {
         ),
         BlocProvider<GoesCubit>(
           create: (BuildContext context) => GoesCubit(),
+        ),
+        BlocProvider<PlotsCubit>(
+          create: (BuildContext context) => PlotsCubit(),
         ),
       ],
       child: const MainApp(),

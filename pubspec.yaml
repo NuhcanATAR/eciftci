@@ -47,6 +47,7 @@ dependencies:
   flutter_datetime_picker_plus: ^2.1.0
   intl: ^0.18.1
   material_design_icons_flutter: ^7.0.7296
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,7 @@ flutter:
     - assets/images/logreg_img/
     - assets/images/connectionerror_img/
     - assets/images/incomegoes_img/
+    - assets/images/plots_img/
   #   - images/a_dot_ham.jpeg
 
 

@@ -108,3 +108,24 @@ class LabelMediumBlackBoldText extends StatelessWidget {
     );
   }
 }
+
+class LabelMediumRedText extends StatelessWidget {
+  const LabelMediumRedText(
+      {required this.text, required this.textAlign, super.key});
+
+  final String text;
+  final dynamic textAlign;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: GoogleFonts.nunito(
+        textStyle: context.general.textTheme.labelMedium?.copyWith(
+          color: Colors.red,
+        ),
+      ),
+    );
+  }
+}
