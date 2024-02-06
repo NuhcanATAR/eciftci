@@ -5,6 +5,8 @@ import 'package:eciftci/feature/mainview/plots/view/plots_list/plotsclose_view.d
 import 'package:eciftci/feature/mainview/plots/view/plotscreate/plotscreate_view.dart';
 import 'package:eciftci/feature/mainview/plots/view/plotsdetail/plotsdetail_view.dart';
 import 'package:eciftci/feature/mainview/plots/view/plotsdetail/view/plotsnotes/plotsnotes_view.dart';
+import 'package:eciftci/feature/mainview/plots/view/plotsdetail/view/plotsnotes/view/createnote/createnote_view.dart';
+import 'package:eciftci/feature/mainview/plots/view/plotsdetail/view/plotsnotes/view/updatenote/updatenote_view.dart';
 import 'package:eciftci/feature/mainview/plots/view/plotsdetail/view/plotsupdate/plotsupdate_view.dart';
 import 'package:eciftci/feature/mainview/plots/view/search/search_view.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainplots_bloc/plots_bloc/cubit/cubit.dart';
@@ -334,6 +336,32 @@ class PlotsRouterService {
       context,
       MaterialPageRoute(
         builder: (context) => const ConnectionErrorView(),
+      ),
+    );
+  }
+
+  // plots note create view
+  void plotsNoteCreateViewNavigatorRouter(
+      BuildContext context, Map<String, dynamic> data) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CreateNoteView(
+          data: data,
+        ),
+      ),
+    );
+  }
+
+  // plots note update view
+  void plotsNoteUpdateViewNavigatorRouter(
+      BuildContext context, Map<String, dynamic> data) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => UpdateNoteView(
+          data: data,
+        ),
       ),
     );
   }

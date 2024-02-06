@@ -14,6 +14,11 @@ enum PlotsServiceDB {
           .doc(FirebaseService().authID)
           .collection("LIST");
 
+  CollectionReference get plotsNoteRef => FirebaseFirestore.instance
+      .collection(name)
+      .doc(FirebaseService().authID)
+      .collection("NOTES");
+
   Stream<QuerySnapshot> get plotsListQuery => FirebaseFirestore.instance
       .collection(name)
       .doc(FirebaseService().authID)
@@ -31,5 +36,13 @@ enum PlotsServiceDB {
           .collection("LIST")
           .where("ACTIVE", isEqualTo: status == "Arazi Aktif" ? true : false)
           .where("YEAR", isEqualTo: year)
+          .snapshots();
+
+  Stream<QuerySnapshot> plotsNoteListQuery(Map<String, dynamic> data) =>
+      FirebaseFirestore.instance
+          .collection(name)
+          .doc(FirebaseService().authID)
+          .collection("NOTES")
+          .where("PLOTSID", isEqualTo: data['ID'])
           .snapshots();
 }

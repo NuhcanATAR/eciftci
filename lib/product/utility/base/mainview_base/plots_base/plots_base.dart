@@ -2,16 +2,18 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
+import 'package:eciftci/product/mixin/mainview_mixin/mainplots_mixin/note_mixin/note_mixin.dart';
 import 'package:eciftci/product/mixin/mainview_mixin/mainplots_mixin/plots_mixin/plots_mixin.dart';
 import 'package:eciftci/product/model/mainview_model/mainplots_model/note_model/note_model.dart';
 import 'package:eciftci/product/model/mainview_model/mainplots_model/plots_model/plots_model.dart';
 import 'package:eciftci/product/router/mainview_router/plots_router/plots_router.dart';
 import 'package:eciftci/product/utility/database/mainview_db/plots_db/plots_db.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import '../../../../../../product/extension/view_extension.dart';
 
 abstract class MainPlotsBase<T extends StatefulWidget> extends State<T>
-    with PlotsBloxMixin {
+    with PlotsBloxMixin, PlotsNoteBlocMixin {
   // model service
   PlotsModelService plotsModelService = PlotsModelService();
   PlotsNoteModel plotsNoteModel = PlotsNoteModel();
@@ -81,5 +83,25 @@ abstract class MainPlotsBase<T extends StatefulWidget> extends State<T>
     } catch (e) {
       plotsModelService.logger.e("Hata: $e");
     }
+  }
+
+  Future<void> selectFutureDate(BuildContext context) async {
+    DatePicker.showDatePicker(
+      context,
+      showTitleActions: true,
+      onConfirm: (date) {
+        DateTime selectedDateTime = DateTime(
+          date.year,
+          date.month,
+          date.day,
+        );
+
+        setState(() {
+          plotsNoteModel.selectedDate = selectedDateTime;
+        });
+      },
+      currentTime: DateTime.now(),
+      locale: LocaleType.tr,
+    );
   }
 }

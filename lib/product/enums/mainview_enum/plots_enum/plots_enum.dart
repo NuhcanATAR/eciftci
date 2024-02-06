@@ -51,7 +51,20 @@ enum PlotsViewStrings {
       'Araziyi kaldırmak istediğinize eminmisiniz, araziyle beraber ona bağlı notlarda kaldırılır!'),
 
   updateDialogTitleText('Araziyi Güncellemek İstiyormusunuz?'),
-  updateDialogSubTitleText('Araziyi gerçekten güncellemek istiyormusunuz.');
+  updateDialogSubTitleText('Araziyi gerçekten güncellemek istiyormusunuz.'),
+
+  plotsNoteTitleInputText('Not Başlığı *'),
+  plotsNoteExplanationInputText('Not Açıklaması *'),
+  plotsNoteFutureDateInputText('İleri Tarih Durumu'),
+  plotsNoteSaveButtonText('Notu Kaydet'),
+  plotsNoteUpdateButtonText('Notu Güncelle'),
+
+  plotsNoteListErrorTitleText('Arazi Notları Yüklenmedi!'),
+  plotsNoteListErrorSubTitleText(
+      'Arazi Notlarınız yüklenirken bir sorun oluştu, lütfen daha sonra tekrar deneyiniz.'),
+  plotsNoteListNoTitleText('Arazi Notunuz Bulunmuyor!'),
+  plotsNoteListNoSubTitleText(
+      'Henüz araziye ait not bulunmuyor, isterseniz araziniz için notlar oluşturabilirsiniz.');
 
   final String value;
   const PlotsViewStrings(this.value);
