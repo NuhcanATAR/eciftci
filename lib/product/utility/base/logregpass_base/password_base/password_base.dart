@@ -1,3 +1,5 @@
+// ignore_for_file: overridden_fields, annotate_overrides
+
 import 'package:eciftci/product/constants/color_constant.dart';
 import 'package:eciftci/product/mixin/logregpass_mixin/password_mixin/password_mixin.dart';
 import 'package:eciftci/product/model/connection_model/connection_model.dart';
