@@ -2,6 +2,9 @@ import 'package:eciftci/feature/splash/splash_view/splash.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/login_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/password_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/register_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainequipment_bloc/equipment_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainequipment_bloc/equipmentcategory_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/mainequipment_bloc/maintenanceservice_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goes_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/maingoes_bloc/goescategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/income_bloc/cubit/cubit.dart';
@@ -43,6 +46,15 @@ void main() async {
         ),
         BlocProvider<PlotsNoteCubit>(
           create: (BuildContext context) => PlotsNoteCubit(),
+        ),
+        BlocProvider<EquipmentCategoryCubit>(
+          create: (BuildContext context) => EquipmentCategoryCubit(),
+        ),
+        BlocProvider<EquipmentCubit>(
+          create: (BuildContext context) => EquipmentCubit(),
+        ),
+        BlocProvider<MaintenanceServiceCubit>(
+          create: (BuildContext context) => MaintenanceServiceCubit(),
         ),
       ],
       child: const MainApp(),

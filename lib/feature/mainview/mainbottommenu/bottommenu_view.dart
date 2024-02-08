@@ -82,12 +82,12 @@ class _BottomMenuViewState extends MainBottomMenuBase<BottomMenuView> {
             ),
             NavigationDestination(
               selectedIcon: Icon(
-                MdiIcons.account,
+                MdiIcons.carSettings,
                 color: MainAppColorConstant.mainColorBackground,
                 size: 21,
               ),
               icon: Icon(
-                MdiIcons.accountOutline,
+                MdiIcons.carSettings,
                 color: Colors.grey,
                 size: 21,
               ),

@@ -1,8 +1,8 @@
 import 'package:eciftci/feature/mainview/agriculturalcalendar/agriculturalcalendar_view.dart';
+import 'package:eciftci/feature/mainview/equipmenttracking/equipmenttracking_view.dart';
 import 'package:eciftci/feature/mainview/home/home_view.dart';
 import 'package:eciftci/feature/mainview/incomegoes/incomegoes_view.dart';
 import 'package:eciftci/feature/mainview/plots/plots_view.dart';
-import 'package:eciftci/feature/mainview/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
@@ -12,10 +12,10 @@ class BottomMenuModelService {
     const PlotsView(),
     const HomeView(),
     const AgriculturalCalendarView(),
-    const ProfileView(),
+    const EquipmentTrackingView(),
   ];
 
-  late int selectedViewIndex = 1;
+  late int selectedViewIndex = 2;
 
   dynamic logger = Logger();
 }
