@@ -28,4 +28,24 @@ class EquipmentCategoryCubit extends Cubit<EquipmentCategoryState> {
           'Kategoriniz Kaydedilmedi, daha sonra tekrar deneyiniz.'));
     }
   }
+
+  Future<void> equiptmentCategoryUpdate(
+    String categoryName,
+    Map<String, dynamic> data,
+  ) async {
+    emit(EquipmentCategoryUpdateLoading());
+
+    try {
+      await EquipmentTrackingDB.EQUIPMENTCATEGORYS.equipmentCategoryRefTable
+          .doc(data['ID'])
+          .update({
+        "CATEGORYNAME": categoryName,
+      });
+
+      emit(EquipmentCategoryUpdateSuccess());
+    } catch (e) {
+      emit(EquipmentCategoryUpdateError(
+          'Kategoriniz Güncellenmedi, daha sonra tekrar deneyiniz.'));
+    }
+  }
 }

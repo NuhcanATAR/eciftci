@@ -63,4 +63,13 @@ enum EquipmentTrackingDB {
           .where("YEARCARE", isEqualTo: year)
           .where("COMPLETIONSTATUS", isEqualTo: status)
           .snapshots();
+
+  Stream<QuerySnapshot> selectCategoryEquipmentList(
+          Map<String, dynamic> data) =>
+      FirebaseFirestore.instance
+          .collection(name)
+          .doc(FirebaseService().authID)
+          .collection("LIST")
+          .where("EQUIPMENTCATEGORYID", isEqualTo: data['ID'])
+          .snapshots();
 }

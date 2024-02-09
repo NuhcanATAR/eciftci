@@ -1,3 +1,6 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 import 'package:eciftci/product/mixin/mainview_mixin/maineqipmenttracking_mixin/maintenanceservice_mixin/maintenanceservice_mixin.dart';
 import 'package:eciftci/product/model/mainview_model/mainequipmenttracking_model/maintenanceservice_model/maintenanceservice_model.dart';
 import 'package:eciftci/product/router/mainview_router/mainequipmenttracking_router/maintenanceservice_router/maintenanceservice_router.dart';
@@ -21,6 +24,21 @@ abstract class MaintenanceServiceBase<T extends StatefulWidget> extends State<T>
 
   late final maxWidth = ViewSizeModelExtension(context).mediaSize.width;
   late final maxHeight = ViewSizeModelExtension(context).mediaSize.height;
+
+  @override
+  void initState() {
+    super.initState();
+    checkControl();
+  }
+
+  void checkControl() async {
+    bool result = await DataConnectionChecker().hasConnection;
+    if (result == true) {
+      modelService.logger.i("İnternet Bağlandı!!");
+    } else {
+      routerService.connectionErrorViewNavigatorRouter(context);
+    }
+  }
 
   Future<void> selectFutureDate(BuildContext context) async {
     DatePicker.showDatePicker(

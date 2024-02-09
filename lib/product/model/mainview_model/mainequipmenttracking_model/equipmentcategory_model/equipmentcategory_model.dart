@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class EquipmentCategoryModel {
   // form key
   final formEquipmentCategoryAddKey = GlobalKey<FormState>();
+  final formEquipmentCategoryUpdateKey = GlobalKey<FormState>();
 
   // controller
   late TextEditingController categoryNameController = TextEditingController();

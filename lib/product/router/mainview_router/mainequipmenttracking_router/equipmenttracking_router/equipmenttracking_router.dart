@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:eciftci/feature/mainview/connectionerror/connectionerror_view.dart';
 import 'package:eciftci/feature/mainview/equipmenttracking/view/equipment/equipment_create/equipmentcreate_view.dart';
 import 'package:eciftci/feature/mainview/equipmenttracking/view/equipment/equipment_update/equipmentupdate_view.dart';
 import 'package:eciftci/feature/mainview/equipmenttracking/view/equipment/equipmentdetail/equipmentdetail_view.dart';
@@ -20,6 +21,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EquipmentTrackingRouterService {
+  // connection error view router
+  void connectionErrorViewNavigatorRouter(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ConnectionErrorView(),
+      ),
+    );
+  }
+
   // crate dialog
   void createDialog(BuildContext context) {
     var alertDialog = AlertDialog(

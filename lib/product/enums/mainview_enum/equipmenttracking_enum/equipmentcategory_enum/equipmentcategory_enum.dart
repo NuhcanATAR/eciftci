@@ -9,7 +9,12 @@ enum EquipmentCategoryViewStrings {
   createDialogSubTitleText(
       'Kategori kaydederseniz eğer geri kaldıramazsınız buna rağmen kaydetmek istiyormusunuz?'),
 
-  saveButtonText('Kategoriyi Kaydet');
+  saveButtonText('Kategoriyi Kaydet'),
+  updateButtonText('Kategoriyi Güncelle'),
+
+  categoryListErrorTitleText('Ekipman Kategorisi Yüklenmedi!'),
+  categoryListErrorSubTitleText(
+      'Ekipman Kategorisi yüklenirken hata oluştu daha sonra tekrar deneyiniz.');
 
   final String value;
   const EquipmentCategoryViewStrings(this.value);

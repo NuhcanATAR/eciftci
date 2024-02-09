@@ -58,4 +58,58 @@ mixin EquipmentTrackingCategoryBlocMixin {
       showDialog(context: context, builder: (context) => alertDialog);
     }
   }
+
+  void equipmentCategoryUpdateListeneBloc(context, state) {
+    if (state is EquipmentCategoryUpdateSuccess) {
+      final snackBar = SnackBar(
+        backgroundColor: MainAppColorConstant.mainColorBackground,
+        content: const LabelMediumWhiteText(
+          text: "Ekipman Kategoriniz Güncellendi!",
+          textAlign: TextAlign.left,
+        ),
+        action: SnackBarAction(
+          label: "Tamam",
+          textColor: Colors.white,
+          onPressed: () {},
+        ),
+        duration: const Duration(
+          seconds: 4,
+        ),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      Navigator.pop(context);
+    } else if (state is EquipmentCategoryUpdateError) {
+      final snackBar = SnackBar(
+        backgroundColor: Colors.red,
+        content: LabelMediumWhiteText(
+          text: state.errorMessage,
+          textAlign: TextAlign.left,
+        ),
+        action: SnackBarAction(
+          label: "Tamam",
+          textColor: Colors.white,
+          onPressed: () {},
+        ),
+        duration: const Duration(
+          seconds: 4,
+        ),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      Navigator.pop(context);
+    } else if (state is EquipmentCategoryUpdateLoading) {
+      var alertDialog = AlertDialog(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: LoadingAnimationWidget.hexagonDots(
+          color: Colors.white,
+          size: 50,
+        ),
+        content: const LabelMediumWhiteText(
+          text: "Kategori Güncelleniyor Bekleyin...",
+          textAlign: TextAlign.center,
+        ),
+      );
+      showDialog(context: context, builder: (context) => alertDialog);
+    }
+  }
 }

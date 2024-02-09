@@ -1,3 +1,6 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 import 'package:eciftci/product/mixin/mainview_mixin/maineqipmenttracking_mixin/eqipmenttracking_mixin/eqipmenttracking_mixin.dart';
 import 'package:eciftci/product/mixin/mainview_mixin/maineqipmenttracking_mixin/eqipmenttrackingcategory_mixin/eqipmenttrackingcategory_mixin.dart';
 import 'package:eciftci/product/model/mainview_model/mainequipmenttracking_model/equipmentcategory_model/equipmentcategory_model.dart';
@@ -30,6 +33,16 @@ abstract class MainEquipmentTrackingBase<T extends StatefulWidget>
     super.initState();
     fetchMainIncomeCategories();
     mainEquipmentCategory = [];
+    checkControl();
+  }
+
+  void checkControl() async {
+    bool result = await DataConnectionChecker().hasConnection;
+    if (result == true) {
+      modelService.logger.i("İnternet Bağlandı!!");
+    } else {
+      routerService.connectionErrorViewNavigatorRouter(context);
+    }
   }
 
   late List<MainEquipmentCategory> mainEquipmentCategory;

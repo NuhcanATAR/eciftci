@@ -1,4 +1,10 @@
 enum EquipmentViewStrings {
+  homeSearchInputText('Ekipman ve Malzeme arayın'),
+  homeEquipmentCategoryListTitleText('Ekipman ve Malzeme Kategorileri'),
+  homeEquipmentCategoryListBtnText('Daha fazla'),
+  homeEquipmentListTitleText('Ekipman ve Malzemeler'),
+  homeEquipmentListBtnText('Daha fazla'),
+
   equipmentCategoryInputText('Ekipman Kategorisi *'),
   equipmentTitleInputText('Ekipman Başlık *'),
   equipmentExplanationInputText('Ekipman Açıklama *'),

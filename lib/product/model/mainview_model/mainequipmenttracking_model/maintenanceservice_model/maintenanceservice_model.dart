@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class MainintenanceServiceModelService {
   // form key
@@ -66,4 +67,6 @@ class MainintenanceServiceModelService {
       return null;
     }
   }
+
+  dynamic logger = Logger();
 }
