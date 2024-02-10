@@ -46,10 +46,12 @@ class MainintenanceServiceModelService {
 
   String? companyPhoneNumberValidator(String? companyPhoneNumberVal) {
     if (companyPhoneNumberVal == null || companyPhoneNumberVal.isEmpty) {
-      return "Zorunlu Alan *";
-    } else {
-      return null;
+      return "Telefon numarası alanı boş bırakılamaz";
     }
+    if (!RegExp(r"^[1-9][0-9]{9}$").hasMatch(companyPhoneNumberVal)) {
+      return "Geçersiz telefon numarası formatı";
+    }
+    return null;
   }
 
   String? caregiverValidator(String? caregiverVal) {

@@ -63,6 +63,7 @@ mixin PlotsNoteBlocMixin {
 
   void noteDeleteListenerBloc(context, state) {
     if (state is PlotsNoteDeleteSuccess) {
+      Navigator.pop(context);
       final snackBar = SnackBar(
         backgroundColor: MainAppColorConstant.mainColorBackground,
         content: const LabelMediumWhiteText(
@@ -80,6 +81,7 @@ mixin PlotsNoteBlocMixin {
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else if (state is PlotsNoteDeleteError) {
+      Navigator.pop(context);
       final snackBar = SnackBar(
         backgroundColor: Colors.red,
         content: LabelMediumWhiteText(

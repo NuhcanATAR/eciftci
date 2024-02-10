@@ -26,10 +26,12 @@ class ProfileModelService {
 
   String? phoneNumberValidator(String? phoneNumberVal) {
     if (phoneNumberVal == null || phoneNumberVal.isEmpty) {
-      return "Zorunlu Alan *";
-    } else {
-      return null;
+      return "Telefon numarası alanı boş bırakılamaz";
     }
+    if (!RegExp(r"^[1-9][0-9]{9}$").hasMatch(phoneNumberVal)) {
+      return "Geçersiz telefon numarası formatı";
+    }
+    return null;
   }
 
   dynamic logger = Logger();
