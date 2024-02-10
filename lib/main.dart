@@ -11,6 +11,7 @@ import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/income_bloc/c
 import 'package:eciftci/product/bloc/mainview_bloc/mainincome_bloc/incomecategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainplots_bloc/plots_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainplots_bloc/plotsnote_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/profile_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/initialize/app_start.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,6 +56,9 @@ void main() async {
         ),
         BlocProvider<MaintenanceServiceCubit>(
           create: (BuildContext context) => MaintenanceServiceCubit(),
+        ),
+        BlocProvider<ProfileCubit>(
+          create: (BuildContext context) => ProfileCubit(),
         ),
       ],
       child: const MainApp(),

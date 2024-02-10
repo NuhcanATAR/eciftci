@@ -8,14 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kartal/kartal.dart';
 
-class SearchView extends StatefulWidget {
-  const SearchView({super.key});
+class IncomeSearchView extends StatefulWidget {
+  const IncomeSearchView({super.key});
 
   @override
-  State<SearchView> createState() => _SearchViewState();
+  State<IncomeSearchView> createState() => _IncomeSearchViewState();
 }
 
-class _SearchViewState extends MainIncomeSearchBase<SearchView> {
+class _IncomeSearchViewState extends MainIncomeSearchBase<IncomeSearchView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -32,3 +32,13 @@ enum AppForgotPassIcon {
   String get toPng => "assets/icons/password_icon/$value.png";
   Image get toImg => Image.asset(toPng);
 }
+
+enum AppHomeIconConstant {
+  appAccountIcon('icons8-farmer-96');
+
+  final String value;
+  const AppHomeIconConstant(this.value);
+
+  String get toPng => "assets/icons/home_icon/$value.png";
+  Image get toImg => Image.asset(toPng);
+}

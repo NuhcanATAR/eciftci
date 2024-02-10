@@ -66,6 +66,28 @@ class LabelMediumWhiteText extends StatelessWidget {
   }
 }
 
+class LabelMediumWhiteBoldText extends StatelessWidget {
+  const LabelMediumWhiteBoldText(
+      {required this.text, required this.textAlign, super.key});
+
+  final String text;
+  final dynamic textAlign;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: GoogleFonts.nunito(
+        textStyle: context.general.textTheme.labelMedium?.copyWith(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
+
 class LabelMediumGreyText extends StatelessWidget {
   const LabelMediumGreyText(
       {required this.text, required this.textAlign, super.key});

@@ -68,3 +68,13 @@ enum AppEquipmentImgConstant {
   String get toPng => "assets/images/equipment_img/$value.png";
   Image get toImg => Image.asset(toPng);
 }
+
+enum AppProfileImgConstant {
+  emailWarningImg('undraw_Notify_re_65on');
+
+  final String value;
+  const AppProfileImgConstant(this.value);
+
+  String get toPng => "assets/images/profile_img/$value.png";
+  Image get toImg => Image.asset(toPng);
+}

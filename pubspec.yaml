@@ -70,6 +70,7 @@ flutter:
     - assets/icons/app_icon/
     - assets/icons/register_icon/
     - assets/icons/password_icon/
+    - assets/icons/home_icon/
   # images
     - assets/images/splashslider_img/
     - assets/images/logreg_img/
@@ -77,6 +78,7 @@ flutter:
     - assets/images/incomegoes_img/
     - assets/images/plots_img/
     - assets/images/equipment_img/
+    - assets/images/profile_img/
   #   - images/a_dot_ham.jpeg
 
 

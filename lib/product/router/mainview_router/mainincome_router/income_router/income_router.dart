@@ -60,7 +60,7 @@ class IncomeRouterService {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const SearchView(),
+        builder: (context) => const IncomeSearchView(),
       ),
     );
   }

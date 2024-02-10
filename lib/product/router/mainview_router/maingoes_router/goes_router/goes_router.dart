@@ -60,7 +60,7 @@ class GoesRouterService {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const SearchView(),
+        builder: (context) => const GoesSearchView(),
       ),
     );
   }
