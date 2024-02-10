@@ -2,6 +2,7 @@ import 'package:eciftci/feature/splash/splash_view/splash.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/login_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/password_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/logregpass_bloc/register_bloc/cubit/cubit.dart';
+import 'package:eciftci/product/bloc/mainview_bloc/eguide_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainequipment_bloc/equipment_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainequipment_bloc/equipmentcategory_bloc/cubit/cubit.dart';
 import 'package:eciftci/product/bloc/mainview_bloc/mainequipment_bloc/maintenanceservice_bloc/cubit/cubit.dart';
@@ -59,6 +60,9 @@ void main() async {
         ),
         BlocProvider<ProfileCubit>(
           create: (BuildContext context) => ProfileCubit(),
+        ),
+        BlocProvider<EGuideCubit>(
+          create: (BuildContext context) => EGuideCubit(),
         ),
       ],
       child: const MainApp(),

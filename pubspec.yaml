@@ -50,6 +50,7 @@ dependencies:
   percent_indicator: ^4.2.3
   table_calendar: ^3.0.9
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -71,6 +72,7 @@ flutter:
     - assets/icons/register_icon/
     - assets/icons/password_icon/
     - assets/icons/home_icon/
+    - assets/icons/eguide_icon/
   # images
     - assets/images/splashslider_img/
     - assets/images/logreg_img/

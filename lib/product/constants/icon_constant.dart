@@ -42,3 +42,13 @@ enum AppHomeIconConstant {
   String get toPng => "assets/icons/home_icon/$value.png";
   Image get toImg => Image.asset(toPng);
 }
+
+enum AppEGuideIconConstant {
+  appUserIcon('icons8-account-96');
+
+  final String value;
+  const AppEGuideIconConstant(this.value);
+
+  String get toPng => "assets/icons/eguide_icon/$value.png";
+  Image get toImg => Image.asset(toPng);
+}
