@@ -23,7 +23,7 @@
   </tr>
     <tr>
     <td>
-      <img src="https://github.com/NuhcanATAR/eciftci/assets/77950761/e9d651dd-69fb-4583-8990-e0014dac9711" width=%100, height=400/>
+      <img src="https://github.com/NuhcanATAR/eciftci/assets/77950761/cd42a5ab-c12c-48d9-80d8-5d60b622f4c7" width=%100, height=400/>
     </td>
   </tr>
       <tr>
@@ -72,6 +72,7 @@
     </td>
   </tr>
 </table>
+
 
 
 
