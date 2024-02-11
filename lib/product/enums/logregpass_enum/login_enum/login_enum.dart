@@ -1,5 +1,5 @@
 enum LoginViewStrings {
-  titleText('E-Çiftçi Uygulamasına Hoşgeldinizi!'),
+  titleText('E-Çiftçi Uygulamasına Hoş geldinizi!'),
   subTitleText('Hesabınza hemen giriş yapabilirsiniz.'),
 
   emailText('E-mail *'),
