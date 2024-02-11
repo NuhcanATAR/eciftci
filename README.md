@@ -5,7 +5,7 @@
 
 ## Proje Hakkında Daha Fazla Bilgi Edinmek İçin
 
-<b>Proje Hakkında, Veritabanı Diyagramı, Detaylı Ekran Görüntüleri için: </b> <a href="https://firebasestorage.googleapis.com/v0/b/eciftci-dc913.appspot.com/o/ECIFTCI.zip?alt=media&token=0ff546e3-ad6b-485a-99e2-da524dda6a23"> İNDİR </a>
+<b>Proje Hakkında, Veritabanı Diyagramı, Detaylı Ekran Görüntüleri için: </b> <a href="https://firebasestorage.googleapis.com/v0/b/eciftci-dc913.appspot.com/o/ECIFTCI.zip?alt=media&token=c1ef787f-469c-4e97-84d4-d60772d56edb"> İNDİR </a>
 
 
 ## Ekran Görüntüleri
