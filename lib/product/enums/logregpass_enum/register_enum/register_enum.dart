@@ -1,5 +1,5 @@
 enum RegisterViewStrings {
-  titleText('E-Çiftçi Uygulamasına Hoşgeldiniz'),
+  titleText('E-Çiftçi Uygulamasına Hoş geldiniz'),
   subTitleText('Hemen hesabınızı oluşturun ve işlerinizi kolaylaştırın.'),
   nameInputText('Ad *'),
   surnameInputText('Soyad *'),
@@ -15,7 +15,7 @@ enum RegisterViewStrings {
   agrementValidatorText('Sözleşmeyi onaylamanız gerekiyor!'),
   registerSuccessTitleText('Tebrikler, Hesabınız Oluşturuldu!'),
   regissterSuccessDescriptionText(
-      'E-Çiftçi uygulamasına hoşgeldiniz, hesabınız başarıyla oluşturuldu, email adresinizi doğruladıktan sonra giriş yapabilirsiniz.');
+      'E-Çiftçi uygulamasına hoş geldiniz, hesabınız başarıyla oluşturuldu, email adresinizi doğruladıktan sonra giriş yapabilirsiniz.');
 
   final String value;
   const RegisterViewStrings(this.value);
